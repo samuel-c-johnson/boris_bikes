@@ -1,7 +1,7 @@
 require '../lib/DockingStation.rb'
 
 describe DockingStation do
-  it {respond_to(release_bike)}
+  it { is_expected.to respond_to :release_bike }
 
 
 
