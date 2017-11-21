@@ -1,0 +1,7 @@
+Type of error: NameError: uninitialized constant Variable
+	
+File path: from /Users/charles/.rvm/rubies/ruby-2.4.1/bin/irb:11:in `<main>'
+
+Line number: 1
+
+Suggestion: create a class and assign variable
