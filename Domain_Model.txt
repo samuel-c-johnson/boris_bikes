@@ -1,0 +1,19 @@
+As a person,
+So that I can use a bike,
+I'd like a docking station to release a bike.
+
+As a person,
+So that I can use a good bike,
+I'd like to see if a bike is working
+
+nouns: Person =  User, Bike, Docking station
+verbs: use, release, working
+
+Objects         Messages
+User            1. Would like to release a bike
+                2. Check if bike is good
+
+Bike            1. In docking station
+
+Docking station 1. Holds bike
+                2. Releases bike     
