@@ -1,10 +1,11 @@
-require '../lib/DockingStation.rb'
-require '../lib/Bike.rb'
+require 'DockingStation.rb'
+require 'Bike.rb'
 
 describe DockingStation do
   it { is_expected.to respond_to :release_bike }
-  it 'returns instance of Bike' do
-    expect(:release_bike).to be_instance_of Bike
+  it 'releases working bikes' do
+    bike = subject.release_bike
+    expect(bike).to be_working
   end
 
 
