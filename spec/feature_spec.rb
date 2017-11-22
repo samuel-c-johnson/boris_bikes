@@ -4,5 +4,8 @@ station = DockingStation.new
 p station
 a_bike = Bike.new
 p a_bike
-station.release_bike
+b_bike = Bike.new
+p b_bike
+#station.release_bike
 station.dock(a_bike)
+station.dock(b_bike)

@@ -9,6 +9,7 @@ class DockingStation
   end
 
   def dock(a_bike)
+    raise RuntimeError, "Dock full" unless !@bike #guard condition
     @bike = a_bike
   end
 
