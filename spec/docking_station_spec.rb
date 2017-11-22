@@ -32,7 +32,7 @@ describe DockingStation do
   describe "#dock" do
     it "should raise error when 2nd bike is attempted to docked" do
       a_bike = Bike.new
-      b_bike = Bike.new
+      b_bike = Bike.new # second bike trying to dock
       subject.dock(a_bike)
       expect{ subject.dock(b_bike) }.to raise_error(RuntimeError, "Dock full")
     end
