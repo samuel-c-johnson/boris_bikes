@@ -16,4 +16,22 @@ User            1. Would like to release a bike
 Bike            1. In docking station
 
 Docking station 1. Holds bike
-                2. Releases bike     
+                2. Releases bike
+
+As a member of the public
+So I can return bikes I've hired
+I want to dock my bike at the docking station
+
+As a member of the public
+So I can decide whether to use the docking station
+I want to see a bike that has been docked
+
+nouns: Member = User, bike, docking station
+verbs: return, dock, see
+
+Objects         Messages
+User            1. Return and dock Bike
+
+Bike
+
+Docking Station 1.Dock a bike
