@@ -1,11 +1,7 @@
 require_relative "../lib/DockingStation.rb"
 require_relative "../lib/Bike.rb"
 station = DockingStation.new
-p station
-a_bike = Bike.new
-p a_bike
-b_bike = Bike.new
-p b_bike
+20.times{ station.dock(Bike.new) }
 #station.release_bike
-station.dock(a_bike)
-station.dock(b_bike)
+21.times{ station.release_bike}
+p station
