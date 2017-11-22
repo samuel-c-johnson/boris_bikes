@@ -1,0 +1,7 @@
+require_relative "./lib/DockingStation.rb"
+
+dockingstation = DockingStation.new
+dockingstation.release_bike
+bike = Bike.new
+dockingstation.dock(bike)
+dockingstation.release_bike
