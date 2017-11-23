@@ -31,7 +31,9 @@ describe DockingStation do
   end
   describe "#dock" do
     it "should raise error when 21st bike is attempted to docked" do
-      20.times{ subject.dock(Bike.new)}
+      DockingStation::DEFAULT_CAPACITY.times do
+        subject.dock(Bike.new)
+      end
       expect{ subject.dock(Bike.new) }.to raise_error(RuntimeError, "Dock full")
     end
   end
