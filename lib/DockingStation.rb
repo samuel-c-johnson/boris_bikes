@@ -13,13 +13,15 @@ class DockingStation
 
   def release_bike #(b_bike) want a specific bike option ONLY
     raise RuntimeError, "No bikes available" unless !empty? #best practice as attr_reader adds '@'
+    raise 'Bike broken' if @bikes.last.working? == false
     @bikes.pop     #.delete(b_bike)
   end
 
-  def dock(a_bike)
+  def dock(bike, working = bike.working?)
     raise RuntimeError, "Dock full" unless !full?  #guard condition
     # adding bikes to the "DockingStation"
-    @bikes.push(a_bike) # << same as .push
+    bike.working = working
+    @bikes.push(bike) # << same as .push
   end
 
   private

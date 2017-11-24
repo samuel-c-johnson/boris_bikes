@@ -13,6 +13,13 @@ describe DockingStation do
     subject.dock(bike)
     bike = subject.release_bike # setting up test ^
     expect(bike).to be_working # test
+
+    bike = Bike.new
+    bike.working = false
+    subject.dock(bike)
+
+    expect {subject.release_bike }.to raise_error("Bike broken")
+
   end
       it "dock has accepted an argument" do
         expect(subject).to respond_to(:dock).with(1).argument
@@ -43,13 +50,22 @@ describe DockingStation do
   describe "#dock" do
     it "should raise error when full of bikes" do
       subject.capacity.times { subject.dock(Bike.new) }
-
     # station.dock(Bike.new).working?
     # it "should be able to report broken bike" do
     #   expect(subject.dock(Bike.new).working?).to
     # end
-
-      expect{ subject.dock(Bike.new) }.to raise_error(RuntimeError, "Dock full")
+    expect{ subject.dock(Bike.new) }.to raise_error(RuntimeError, "Dock full")
     end
-  end
+    it 'Will accept broken bikes' do
+      bike = Bike.new
+      bike.working = false
+      expect {subject.dock(bike)}.not_to raise_error
+    end
+
+    it 'will accept an argument about whether the bike is working' do
+      bike = Bike.new
+      expect {subject.dock(bike, false).not_to raise_error}
+      expect(subject).to respond_to(:dock).with(2).arguments
+    end
+end
 end
